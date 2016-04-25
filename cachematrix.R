@@ -1,9 +1,8 @@
-@@ -4,7 +4,35 @@
-## Write a short comment describing this function
-
+## Creates cacheable matrix for inputting to
+## cacheSolve() function which sets and gets 
+## the cached values
 makeCacheMatrix <- function(x = matrix()) {
-
-  
+  ## By default set the value to null initially
   inv_x <- NULL
   
   set <- function(y) {
@@ -35,7 +34,9 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-@@ -12,4 +40,27 @@ makeCacheMatrix <- function(x = matrix()) {
+## Computes the inverse of the cacheable matrix returned by makeCacheMatrix()
+## If the inverse has already been calculated and there's no change in the matrix
+## then the cacheSolve() returns the cached inverse
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
@@ -58,7 +59,3 @@ cacheSolve <- function(x, ...) {
 }
 
 
-a <- diag(2,6)
-a
-CachedMarix <- makeCacheMatrix(a)
-cacheSolve(CachedMarix)
